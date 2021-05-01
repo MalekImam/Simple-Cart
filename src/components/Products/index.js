@@ -1,10 +1,12 @@
 // Dep
 import React from "react"
 import { connect } from "react-redux"
-import ProductsList from "./components/ProductsList"
 // Core Files
 import { createMockProducts } from "./helpers/demoData"
 import { loadProducts } from "../../core/redux/actions/products"
+// Components
+import ProductsList from "./components/ProductsList"
+import FilterProducts from "./components/FilterProducts"
 
 function ProductsContainer({ loadProducts }) {
   const data = { productsById: createMockProducts() }
@@ -12,7 +14,7 @@ function ProductsContainer({ loadProducts }) {
 
   return (
     <div>
-      {/* <FilterProducts /> */}
+      <FilterProducts />
       <ProductsList />
     </div>
   )

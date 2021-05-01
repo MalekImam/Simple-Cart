@@ -14,5 +14,5 @@ export const ADD_TO_CART = `${CART} Add`
 export const REMOVE_FROM_CART = `${CART} Remove`
 
 // VisibilityFilter
-export const VISIBILITY_FILTER = "Visibility_Filter"
+export const VISIBILITY_FILTER = "[Visibility_Filter]"
 export const SET_VISIBILITY_FILTER = `${VISIBILITY_FILTER} Set`
