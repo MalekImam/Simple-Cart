@@ -35,11 +35,12 @@ const toggleProductsMdl = () => (next) => (action) => {
   } else next(action)
 }
 
-// Split Middleware
+// Split Middleware - Example (This is just an example to clarify what is the split Middleware)
 // Middleware cares about buying or cancel product
 const checkoutProductMdl = ({ dispatch }) => (next) => (action) => {
   next(action)
 
+  // Split Action to another two actions
   if (action.type === BUY_PRODUCT) {
     dispatch(selectProduct(action.payload.id))
     dispatch(addItemToCart(action.payload))
