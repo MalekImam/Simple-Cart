@@ -1,6 +1,6 @@
 import { getRandInt } from "../../../core/helpers/randomNumber"
 
-export const createMockProducts = (num = 100) => {
+export const createMockProducts = (num = 1000) => {
   const data = new Array(num).fill(null).map((_, id) => ({
     id: ++id,
     name: `Product ${id}`,
