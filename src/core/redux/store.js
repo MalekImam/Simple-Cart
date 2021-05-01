@@ -1,8 +1,20 @@
 // Dep
-import { createStore } from "redux"
+import { applyMiddleware, compose, createStore } from "redux"
+// Middlewares
+import coreMiddlewares from "./middlewares/core"
+import appMiddlewares from "./middlewares/app/index"
 // Core
 import rootReducers from "./reducers"
 
-const configureStore = () => createStore(rootReducers)
+const middlewareEnhancer = applyMiddleware(
+  ...coreMiddlewares,
+  ...appMiddlewares
+)
+const composedEnhancers = compose(
+  middlewareEnhancer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
-export default configureStore
+const store = createStore(rootReducers, composedEnhancers)
+
+export default store
