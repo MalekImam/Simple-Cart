@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import { connect } from "react-redux"
 // Core Files
 import Product from "./Product"
-import { getVisibleProducts } from "../../../core/redux/selectors/products"
+import { getVisibleProductsFilteredByKeyword } from "../../../core/redux/selectors/products"
 
 const ProductsList = ({ products }) => {
   return (
@@ -22,7 +22,7 @@ ProductsList.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    products: getVisibleProducts(state),
+    products: getVisibleProductsFilteredByKeyword(state),
   }
 }
 

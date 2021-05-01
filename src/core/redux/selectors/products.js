@@ -6,14 +6,20 @@ import {
   SHOW_SELECTED,
   SHOW_UNSELECTED,
 } from "../constants/visibilityFilter"
+import { getKeyword } from "./keyword"
 import { getVisiblityFilter } from "./visibilityFilter"
 
 const selectProducts = (state) => state.products
 
+// export const getProducts = createSelector(
+//   selectProducts,
+//   ({ productsById }) =>
+//     productsById && Object.keys(productsById).map((id) => productsById[id])
+// )
+
 export const getProducts = createSelector(
   selectProducts,
-  ({ productsById }) =>
-    productsById && Object.keys(productsById).map((id) => productsById[id])
+  ({ productsById, allIds }) => allIds.map((id) => productsById[id])
 )
 
 export const getVisibleProducts = createSelector(
@@ -30,6 +36,12 @@ export const getVisibleProducts = createSelector(
         return products
     }
   }
+)
+
+export const getVisibleProductsFilteredByKeyword = createSelector(
+  [getVisibleProducts, getKeyword],
+  (visibleProducts, keyword) =>
+    visibleProducts.filter((product) => product.name.indexOf(keyword) > -1)
 )
 
 // export const getProducts = ({ productsById }) => {

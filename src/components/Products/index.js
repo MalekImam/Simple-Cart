@@ -7,6 +7,7 @@ import { loadProducts } from "../../core/redux/actions/products"
 // Components
 import ProductsList from "./components/ProductsList"
 import FilterProducts from "./components/FilterProducts"
+import SearchProductsContainer from "./components/SearchProductsContainer"
 
 function ProductsContainer({ loadProducts }) {
   const data = { productsById: createMockProducts() }
@@ -14,6 +15,7 @@ function ProductsContainer({ loadProducts }) {
 
   return (
     <div>
+      <SearchProductsContainer />
       <FilterProducts />
       <ProductsList />
     </div>

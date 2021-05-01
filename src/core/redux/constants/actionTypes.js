@@ -16,3 +16,7 @@ export const REMOVE_FROM_CART = `${CART} Remove`
 // VisibilityFilter
 export const VISIBILITY_FILTER = "[Visibility_Filter]"
 export const SET_VISIBILITY_FILTER = `${VISIBILITY_FILTER} Set`
+
+// Keyword - Products Search
+export const KEYWORD = "[Key Word]"
+export const SET_KEYWORD = `${KEYWORD} Set`
