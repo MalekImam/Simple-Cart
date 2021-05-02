@@ -6,4 +6,4 @@ The project use middlewares that make almost of the job is easy understand the c
 
 ## What project do?
 
-Present large numbers of products, and has the ability to add any project to the cart or remove it, also it has two more features, searching and filtering.
+Displays a large numbers of products, and has the ability to add any product to the cart or remove it, also it has two more features, searching and filtering.
